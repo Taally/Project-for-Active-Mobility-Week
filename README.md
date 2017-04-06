@@ -8,8 +8,8 @@
 ## Системные требования
 Для корректной работы этой программы необходимо: 
 1. Библиотеки Microsoft Visual Studio 2012 Express.
-2. Установить шрифт v_CCRatatatat_v1.02.ttf, находящийся в [zip-архиве](https://github.com/Taally/Project-for-Active-Mobility-Week/releases) с программой.
-3. Не удалять папку resources и файлы из нее.
+2. Установить шрифт v_CCRatatatat_v1.02.ttf, находящийся в [zip-архиве](https://github.com/Taally/Project-for-Active-Mobility-Week/releases) с программой (для наиболее оптимальной работы программы).
+
 
 ## Поддержка
 Если у вас возникли сложности или вопросы при использовании этой программы, создайте [обсуждение](https://github.com/Taally/Project-for-Active-Mobility-Week/issues) в этом репозитории или напишите на электронную почту <booleanfox@gmail.com>.
