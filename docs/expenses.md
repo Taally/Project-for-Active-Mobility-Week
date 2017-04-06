@@ -22,18 +22,21 @@ void create_new_expense(vector<Expense*> & v) {
 ```
 А после сохраняется в файл и составляется отчёт. 
 ```C++
-void save_expenses(const vector<Expense*> & v)
-{
-	std::locale::global(std::locale(""));
-	ofstream f;
-	f.open(create_exp_filename());
-	for each(auto e in v) {
-		f << expense_to_str(e->_purpose) << ";";
-		f << e->_date->tm_mday << ";" << e->_date->tm_mon << ";" << e->_date->tm_year << ";";
-		f << e->_amount << ";";
-		delete e;
-	}
-	f.close();
+void file_expense_report(const vector<Expense*> & v) 
+{ 
+time_t t = time(NULL); 
+tm * today = localtime(&t); 
+string name; 
+name = "expense_report" + std::to_string(today->tm_mday) + "_" + std::to_string(today->tm_mon + 1) + "_" + std::to_string(today->tm_year + 1900) + ".txt"; 
+ofstream f; 
+f.open(name); 
+double fuel, rep, fines; 
+amount_for_purpose(v, fuel, rep, fines); 
+f « "Потрачено на ГСМ: " « fuel « " р.\n"; 
+f « "Потрачено на ремонт и детали: " « rep « " р.\n"; 
+f « "Потрачено на штрафы: " « fines « " р.\n"; 
+f « "Всего потрачено " « fuel+rep+fines « " р. \n"; 
+f.close(); 
 }
 ```
 
